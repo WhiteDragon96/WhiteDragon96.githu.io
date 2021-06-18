@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>MD语法</title>
+      <link href="/2021/06/18/markdown%E8%AF%AD%E6%B3%95/"/>
+      <url>/2021/06/18/markdown%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>[toc]</p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><p>（# 标题）</p><p><strong>加粗</strong></p><p>（** 字体 **）</p><p><em>斜体</em></p><p>（* 字体 *）</p><p><em><strong>斜体加粗</strong></em></p><p>（*** 字体  ***）</p><p><del>删除线</del></p><p>（<del>字体</del>）</p><blockquote><p>引用内容</p></blockquote><p>(&gt;字体)</p><p>分割线</p><hr><p>（—或***)</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><img src="https://s1.ax1x.com/2020/06/24/Nd36gK.png" alt="start" title="start1"></p><p><a href="www.baidu.com" title="百度">超链接</a></p><p>[超链接](链接 “title 可写可不写”)</p><p><a href="www.codedragon.top">blog</a></p><p>html语言的a标签   <a href="链接地址" >超链接</a></p><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul><li>无序列表</li><li>无序列表<ul><li>或 + 或 *</li></ul></li></ul><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ol><li>有序列表</li><li>有序列表</li><li></li></ol><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="md-table-fig" cid="n40" mdtype="table"><table class="md-table"><thead><tr class="md-end-block" cid="n41" mdtype="table_row"><th><span class="td-span" cid="n42" mdtype="table_cell"><span md-inline="plain" class="md-plain">表头</span></span></th><th><span class="td-span" cid="n43" mdtype="table_cell"><span md-inline="plain" class="md-plain">表头</span></span></th><th><span class="td-span" cid="n44" mdtype="table_cell"><span md-inline="plain" class="md-plain">表头</span></span></th><th><span class="td-span" cid="n45" mdtype="table_cell"></span></th></tr></thead><tbody><tr class="md-end-block" cid="n46" mdtype="table_row"><td><span class="td-span" cid="n47" mdtype="table_cell"><span md-inline="plain" class="md-plain">内容</span></span></td><td><span class="td-span" cid="n48" mdtype="table_cell"><span md-inline="plain" class="md-plain">内容</span></span></td><td><span class="td-span" cid="n49" mdtype="table_cell"><span md-inline="plain" class="md-plain">内容</span></span></td><td><span class="td-span" cid="n50" mdtype="table_cell"></span></td></tr></tbody></table></figure><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><code>代码内容</code></p><pre><code class="&lt;">public static String doGet(String url, String requestJson) throws IOException &#123;        HttpClient httpClient = HttpClients.createDefault();        RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(5000).setConnectTimeout(5000).build();        HttpGet get = new HttpGet(url);        get.setConfig(requestConfig);        StringEntity myEntity = new StringEntity(requestJson, ContentType.APPLICATION_JSON);        get.setHeader(&quot;accept&quot;, &quot;*/*&quot;);        get.setHeader(&quot;connection&quot;, &quot;Keep-Alive&quot;);        get.setHeader(&quot;accept&quot;, &quot;*/*&quot;);        get.setHeader(&quot;user-agent&quot;, &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)&quot;);        String result;        HttpResponse execute = httpClient.execute(get);        result = EntityUtils.toString(execute.getEntity(), Consts.UTF_8);        return result;    &#125;</code></pre><p> <code>[toc]</code> 写在文章开头，自动生成目录</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>idea</title>
+      <link href="/2021/06/18/idea/"/>
+      <url>/2021/06/18/idea/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#sql">SQL</a><ul><li><a href="#distinct-%E5%8E%BB%E9%87%8D">DISTINCT 去重</a></li><li><a href="#group-by">GROUP BY</a><ul><li><a href="#having-%E5%8F%AF%E4%BB%A5%E6%8C%87%E5%AE%9A%E7%AD%9B%E9%80%89">HAVING 可以指定筛选</a></li><li><a href="#%E9%85%8D%E5%90%88%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0">配合聚合函数</a></li></ul></li><li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5">数据库批量插入</a></li></ul></li><li><a href="#aspect">Aspect</a></li><li><a href="#redis">Redis</a></li><li><a href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a><ul><li><a href="#%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F">建造者模式</a><h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="DISTINCT-去重"><a href="#DISTINCT-去重" class="headerlink" title="DISTINCT 去重"></a>DISTINCT 去重</h4></li></ul></li><li>distinct 只能放在所有字段前面，并且后面的字段都会生效<pre><code class="SQL">  select distinct id, name from table_name  会把 id,name 一样的归为一条</code></pre></li></ul><h4 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h4><ul><li>group by 字段 可以根据不同字段分组 随机显示一条<h5 id="HAVING-可以指定筛选"><a href="#HAVING-可以指定筛选" class="headerlink" title="HAVING 可以指定筛选"></a>HAVING 可以指定筛选</h5>  是对group by后的结果进行筛选<pre><code class="SQL">  select * from user where name = &#39;张三&#39; HAVING age &lt; 15;  搜索名字叫张三小于15岁的</code></pre><h5 id="配合聚合函数"><a href="#配合聚合函数" class="headerlink" title="配合聚合函数"></a>配合聚合函数</h5>常见聚合函数：count() 计数、sum() 求和、avg() 平均数、max() 最大值、min() 最小值</li></ul><h4 id="数据库批量插入"><a href="#数据库批量插入" class="headerlink" title="数据库批量插入"></a>数据库批量插入</h4><p>  insertBatch插入方式比for循环插入方式效率更高。</p><pre><code class="SQL">  &lt;insert id=&quot;insertBatch&quot;&gt;      INSERT INTO t_user      (id, name, password)      VALUES      &lt;foreach collection =&quot;userList&quot; item=&quot;user&quot; separator =&quot;,&quot;&gt;          (#&#123;id&#125;, #&#123;name&#125;, #&#123;password&#125;)      &lt;/foreach &gt;  &lt;/insert&gt;</code></pre><h3 id="Aspect"><a href="#Aspect" class="headerlink" title="Aspect"></a>Aspect</h3><h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><p>redis key命名时为什么防止重复一般 前缀+key,前缀名名时用：分开可以建立目录， 比如， dic:dic2: + key</p><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><h4 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h4><p>思路：</p><ul><li><p>在Bean内新建一个静态内部类，XxxBuilder</p></li><li><p>把Bean内所有参数复制到XxxBuilder,然后在XxxBuild新建必须含有参数的构造器，其他参数使用变量名作为方法然后返回自身（this）以便形成链式调用；</p></li><li><p>在 Bean 类里面新建一个接收 XxxBuilder 参数的私有构造器，避免使用 new 创建对象；</p></li><li><p>在 XxxBuilder 类新建一个 build 方法开始构建 Bean 类，也是作为链式调用的结束；</p><pre><code class="Java">@Datapublic class Task &#123;    private Long id;    private String name;    private String content;    private int type;    private int status;    public Task(Long id, String name, String content, int type, int status) &#123;        this.id = id;        this.name = name;        this.content = content;        this.type = type;        this.status = status;    &#125;    public Task(TaskBuilder taskBuilder) &#123;        this.id = taskBuilder.id;        this.name = taskBuilder.name;        this.content = taskBuilder.content;        this.type = taskBuilder.type;        this.status = taskBuilder.status;    &#125;    public static class TaskBuilder &#123;        private Long id;        private String name;        private String content;        private int type;        private int status;        public TaskBuilder(Long id, String name) &#123;            this.id = id;            this.name = name;        &#125;        public TaskBuilder content(String content) &#123;            this.content = content;            return this;        &#125;        public TaskBuilder type(int type) &#123;            this.type = type;            return this;        &#125;        public TaskBuilder status(int status) &#123;            this.status = status;            return this;        &#125;        public Task build() &#123;            return new Task(this);        &#125;    &#125;&#125;test:Task task = new Task.TaskBuilder(1239878L,&quot;迪丽热巴&quot;).build();Task task1 = new Task.TaskBuilder(9527L,&quot;古力娜扎&quot;).status(1).type(2).build();</code></pre><p>Lombok @Builder注解支持，易维护</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 想法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java8 Time Api使用指南</title>
+      <link href="/2021/06/18/Java%208%20Time%20Api%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+      <url>/2021/06/18/Java%208%20Time%20Api%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#description-java8-time-api%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">description: Java8 Time Api使用指南</a><ul><li><a href="#1%E6%A6%82%E8%BF%B0">1.概述</a></li><li><a href="#2-%E6%97%A7%E7%9A%84%E6%97%B6%E9%97%B4apijava8%E4%B9%8B%E5%89%8D%E7%9A%84%E9%97%AE%E9%A2%98">2. 旧的时间API（java8之前）的问题</a></li><li><a href="#3-%E4%BD%BF%E7%94%A8localdatelocaltime%E5%92%8Clocaldatetime">3. 使用LocalDate，LocalTime和LocalDateTime</a><ul><li><a href="#31-%E4%BD%BF%E7%94%A8localdate">3.1 使用LocalDate</a></li><li><a href="#32-%E4%BD%BF%E7%94%A8localtime">3.2 使用LocalTime</a></li><li><a href="#33-%E4%BD%BF%E7%94%A8localdatetime">3.3 使用LocalDateTime</a></li></ul></li><li><a href="#4-%E4%BD%BF%E7%94%A8zoneddatetime-api">4. 使用ZonedDateTime API</a></li><li><a href="#5%E4%BD%BF%E7%94%A8period%E5%92%8Cduration">5.使用Period和Duration</a><ul><li><a href="#51%E4%BD%BF%E7%94%A8period">5.1。使用Period</a></li><li><a href="#52-%E4%BD%BF%E7%94%A8duration">5.2 使用Duration</a></li></ul></li><li><a href="#6%E4%B8%8E%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%A5%E5%8E%86%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7">6.与日期和日历的兼容性</a></li><li><a href="#7-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96">7. 日期和时间格式化</a></li></ul></li></ul><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><p>Java 8为Date和Time引入了新的API，以解决旧java.util.Date和java.util.Calendar的缺点。</p><p>作为本文的一部分，让我们从现有Date和Calendar API存在的一些问题入手，来探讨新的Java 8 Date和Time API如何解决这些问题。</p><p>我们还将搞一搞Java 8时间类库中的核心类，比如LocalDate, LocalTime, LocalDateTime, ZonedDateTime, Period, Duration以及它们的api。</p><h3 id="2-旧的时间API（java8之前）的问题"><a href="#2-旧的时间API（java8之前）的问题" class="headerlink" title="2. 旧的时间API（java8之前）的问题"></a>2. 旧的时间API（java8之前）的问题</h3><ul><li><p>线程安全 - Date 和Calendar类不是线程安全的，使开发者难以调试这些api的并发问题，需要编写额外的代码来处理线程安全。Java 8中引入的新的Date和Time API是不可变的和线程安全的，使得这些痛点得以解决。</p></li><li><p>API设计和易于理解 - 旧的时间api非常难以理解，操作都非常复杂，非常绕口，没有提供一些常用的解析转换方法。新的时间API是以ISO为中心的，并遵循 date, time, duration 和 periods的一致域模型。提供了一些非常实用方法以支持最常见的操作。不再需要我们自己封装一些时间操作类。</p></li><li><p>ZonedDate和Time - 在旧的时间api中开发人员必须编写额外的逻辑来处理旧API的时区逻辑，而使用新的API，可以使用 Local和ZonedDate / Time API来处理时区。无需过多关心时区转换问题。</p></li></ul><h3 id="3-使用LocalDate，LocalTime和LocalDateTime"><a href="#3-使用LocalDate，LocalTime和LocalDateTime" class="headerlink" title="3. 使用LocalDate，LocalTime和LocalDateTime"></a>3. 使用LocalDate，LocalTime和LocalDateTime</h3><p>最常用的类是LocalDate，LocalTime和LocalDateTime。正如他们的名字所示，它们代表与上下文相结合的本地日期/时间。</p><p>这些类主要用于不需要在上下文中明确指定时区的情况。作为本节的一部分，我们将介绍最常用的API。</p><h4 id="3-1-使用LocalDate"><a href="#3-1-使用LocalDate" class="headerlink" title="3.1 使用LocalDate"></a>3.1 使用LocalDate</h4><p> <b>LocalDate</b>表示在<b>ISO格式（YYYY-MM-DD）</b>下的不带具体时间的日期。</p><p>常用于表示生日或者我们最关心的发工资的日期。</p><p>获取当前系统时钟下的日期，如下所示：</p><pre><code class="Java">LocalDate localDate = LocalDate.now();</code></pre><p>表示特定日，月和年的LocalDate可以使用“ of ”方法或使用“ parse ”方法获得。例如，以下代码段代表2015年2月20日的LocalDate：</p><pre><code class="Java">LocalDate.of(2015, 02, 20);LocalDate.parse(&quot;2015-02-20&quot;);</code></pre><p>是不是非常直观而且方便呢！LocalDate提供各种实用方法，以获得各种日期信息。让我们快速浏览一下这些API方法。</p><p>以下代码段获取当前本地日期并添加一天：</p><pre><code class="Java">LocalDate tomorrow = LocalDate.now().plusDays(1);</code></pre><p>此示例获取当前日期并减去一个月。请注意它是如何接受枚举作为时间单位的：</p><pre><code class="Java">LocalDate previousMonthSameDay = LocalDate.now().minus(1, ChronoUnit.MONTHS);</code></pre><p>在以下两个代码示例中，我们分析日期“2016-06-12”并分别获取星期几和月中的某天。注意返回值，第一个是表示DayOfWeek的对象，而第二个是表示月份的序数值的int：</p><pre><code class="Java">DayOfWeek sunday = LocalDate.parse(&quot;2016-06-12&quot;).getDayOfWeek();int twelve = LocalDate.parse(&quot;2016-06-12&quot;).getDayOfMonth();</code></pre><p>我们可以测试一个日期是否发生在闰年，如果用老方法怕不是要上天：</p><pre><code class="Java">boolean leapYear = LocalDate.now().isLeapYear();</code></pre><p>判断日期的先后：</p><pre><code class="Java">boolean notBefore = LocalDate.parse(&quot;2016-06-12&quot;).isBefore(LocalDate.parse(&quot;2016-06-11&quot;));boolean isAfter = LocalDate.parse(&quot;2016-06-12&quot;).isAfter(LocalDate.parse(&quot;2016-06-11&quot;));</code></pre><p>日期边界可以从给定日期获得。在以下两个示例中，我们得到LocalDateTime，它代表给定日期的一天的开始（2016-06-12T00：00）和代表月初的LocalDate（2016-06-01）：</p><pre><code class="Java">LocalDateTime beginningOfDay = LocalDate.parse(&quot;2016-06-12&quot;).atStartOfDay();LocalDate firstDayOfMonth = LocalDate.parse(&quot;2016-06-12&quot;) .with(TemporalAdjusters.firstDayOfMonth());</code></pre><p>现在让我们来看看我们如何使用当地时间。</p><h4 id="3-2-使用LocalTime"><a href="#3-2-使用LocalTime" class="headerlink" title="3.2 使用LocalTime"></a>3.2 使用LocalTime</h4><p>在本地时间表示不带日期的时间。</p><p>与LocalDate类似，可以从系统时钟或使用“parse”和“of”方法创建LocalTime实例。快速浏览下面的一些常用API。</p><p>可以从系统时钟创建当前LocalTime的实例，如下所示：</p><pre><code class="Java">LocalTime now = LocalTime.now();</code></pre><p>在下面的代码示例中，我们通过解析字符串表示创建表示06:30 AM 的LocalTime：</p><pre><code class="Java">LocalTime sixThirty = LocalTime.parse(&quot;06:30&quot;);</code></pre><p>方法“of”可用于创建LocalTime。例如，下面的代码使用“of”方法创建表示06:30 AM的LocalTime：</p><pre><code class="Java">LocalTime sixThirty = LocalTime.of(6, 30);</code></pre><p>下面的示例通过解析字符串来创建LocalTime，并使用“plus”API为其添加一小时。结果将是代表07:30 AM的LocalTime：</p><pre><code class="Java">LocalTime sevenThirty = LocalTime.parse(&quot;06:30&quot;).plus(1, ChronoUnit.HOURS);</code></pre><p>各种getter方法可用于获取特定的时间单位，如小时，分钟和秒，如下所示获取小时：</p><pre><code class="Java">int six = LocalTime.parse(&quot;06:30&quot;).getHour();</code></pre><p>同LocalDate一样检查特定时间是否在另一特定时间之前或之后。下面的代码示例比较结果为true的两个LocalTime：</p><pre><code class="Java">boolean isbefore = LocalTime.parse(&quot;06:30&quot;).isBefore(LocalTime.parse(&quot;07:30&quot;));</code></pre><p>一天中的最大，最小和中午时间可以通过LocalTime类中的常量获得。在执行数据库查询以查找给定时间范围内的记录时，这非常有用。例如，下面的代码代表23：59：59.99：</p><pre><code class="Java">LocalTime maxTime = LocalTime.MAX</code></pre><p>现在让我们深入了解LocalDateTime。</p><h4 id="3-3-使用LocalDateTime"><a href="#3-3-使用LocalDateTime" class="headerlink" title="3.3 使用LocalDateTime"></a>3.3 使用LocalDateTime</h4><p>所述LocalDateTime用于表示日期和时间的组合。</p><p>当我们需要结合日期和时间时，这是最常用的类。该类提供了各种API，我们将介绍一些最常用的API。</p><p>类似于LocalDate和LocalTime从系统时钟获取LocalDateTime的实例：</p><p>LocalDateTime.now();<br>下面的代码示例解释了如何使用工厂“of”和“parse”方法创建实例。结果将是代表2015年2月20日06:30 AM 的LocalDateTime实例：</p><pre><code class="Java">LocalDateTime.of(2015, Month.FEBRUARY, 20, 06, 30);LocalDateTime.parse(&quot;2015-02-20T06:30:00&quot;);</code></pre><p>有一些实用的API可以支持特定时间单位的时间运算，例如天，月，年和分钟。以下代码示例演示了“加”和“减”方法的用法。这些API的行为与LocalDate和LocalTime中的 API完全相同：</p><pre><code class="Java">localDateTime.plusDays(1);localDateTime.minusHours(2);</code></pre><p>Getter方法可用于提取类似于日期和时间类的特定单位。鉴于上面的LocalDateTime实例，下面的代码示例将返回2月份的月份：</p><pre><code class="Java">localDateTime.getMonth();</code></pre><h3 id="4-使用ZonedDateTime-API"><a href="#4-使用ZonedDateTime-API" class="headerlink" title="4. 使用ZonedDateTime API"></a>4. 使用ZonedDateTime API</h3><p>当我们需要处理时区特定的日期和时间时，Java 8提供了ZonedDateTime 类。ZoneID是用于表示不同区域的标识符。大约有40个不同的时区，使用ZoneID表示它们，如下所示</p><p>下面的代码我们来获取下“亚洲/上海”时区:</p><pre><code class="Java">ZoneId zoneId = ZoneId.of(&quot;Aisa/Shanghai&quot;);</code></pre><p>获取所有的时区：</p><pre><code class="Java">Set&lt;String&gt; allZoneIds = ZoneId.getAvailableZoneIds();</code></pre><p>LocalDateTime转化为特定的时区中的时间：</p><pre><code class="Java">ZonedDateTime zonedDateTime = ZonedDateTime.of(localDateTime, zoneId);</code></pre><p>ZonedDateTime提供解析方法来获取时区的特定日期时间：</p><pre><code class="Java">ZonedDateTime.parse(&quot;2015-05-03T10:15:30+01:00[Aisa/Shanghai]&quot;);</code></pre><p>使用时区的另一种方法是使用OffsetDateTime。OffsetDateTime是具有偏移量的日期时间的不可变表示形式。此类存储所有日期和时间字段，精确到纳秒，以及从UTC/格林威治的偏移量。可以使用ZoneOffset创建OffsetDateTime实例。这里我们创建一个LocalDateTime来表示2015年2月20日上午6:30：</p><pre><code class="Java">LocalDateTime localDateTime = LocalDateTime.of(2015, Month.FEBRUARY, 20, 06, 30);</code></pre><p>然后我们通过创建ZoneOffset并为LocalDateTime实例设置来增加两个小时：</p><pre><code class="Java">ZoneOffset offset = ZoneOffset.of(&quot;+02:00&quot;);OffsetDateTime offSetByTwo = OffsetDateTime.of(localDateTime, offset);</code></pre><p>我们现在的本地日期时间为2015-02-20 06:30 +02：00。现在让我们继续讨论如何使用Period和Duration类修改日期和时间值。</p><h3 id="5-使用Period和Duration"><a href="#5-使用Period和Duration" class="headerlink" title="5.使用Period和Duration"></a>5.使用Period和Duration</h3><p>Period : 用于计算两个日期（年月日）间隔。</p><p>Duration : 用于计算两个时间（秒，纳秒）间隔。</p><h4 id="5-1。使用Period"><a href="#5-1。使用Period" class="headerlink" title="5.1。使用Period"></a>5.1。使用Period</h4><p>Period 类被广泛地用于修改给定的日期的值或者获取两个日期之间的差值：</p><pre><code class="Java">LocalDate initialDate = LocalDate.parse(&quot;2007-05-10&quot;);LocalDate finalDate = initialDate.plus(Period.ofDays(5));</code></pre><p>Period 类有各种getter方法，如getYears，getMonths和getDays从获取值周期对象。下面的代码示例返回一个int值为5，是基于上面示例的逆序操作：</p><pre><code class="Java">int five = Period.between(finalDate, initialDate).getDays();</code></pre><p>该Period 可以在特定的单元获得两个日期之间的如天或月或数年，使用ChronoUnit.between：</p><pre><code class="Java">int five = ChronoUnit.DAYS.between(finalDate , initialDate);</code></pre><p>此代码示例返回五天。让我们继续看看Duration类。</p><h4 id="5-2-使用Duration"><a href="#5-2-使用Duration" class="headerlink" title="5.2 使用Duration"></a>5.2 使用Duration</h4><p>类似Period ，该Duration类是用来处理时间。在下面的代码中，我们创建一个本地时间上午6:30，然后加30秒的持续时间，以使本地时间上午6时三十〇分30秒的：</p><pre><code class="Java">LocalTime initialTime = LocalTime.of(6, 30, 0);LocalTime finalTime = initialTime.plus(Duration.ofSeconds(30));</code></pre><p>两个时刻之间的持续时间可以作为持续时间或作为特定单位获得。在第一个代码片段中，我们使用Duration类的between（）方法来查找finalTime和initialTime之间的时间差，并以秒为单位返回差异：</p><pre><code class="Java">int thirty = Duration.between(finalTime, initialTime).getSeconds();</code></pre><p>在第二个例子中，我们使用ChronoUnit类的between（）方法来执行相同的操作：</p><pre><code class="Java">int thirty = ChronoUnit.SECONDS.between(finalTime, initialTime);</code></pre><p>现在我们来看看如何将旧的Date 和Calendar 转换为新的Date和Time。</p><h3 id="6-与日期和日历的兼容性"><a href="#6-与日期和日历的兼容性" class="headerlink" title="6.与日期和日历的兼容性"></a>6.与日期和日历的兼容性</h3><p>Java 8添加了toInstant（）方法，该方法有助于将旧API中的Date和Calendar实例转换为新的Date Time API，如下面的代码片段所示：</p><pre><code class="Java">LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());LocalDateTime.ofInstant(calendar.toInstant(), ZoneId.systemDefault());</code></pre><p>所述LocalDateTime可以从如下“ofEpochSecond”方法来构造。以下代码的结果将是代表2016-06-13T11：34：50 的LocalDateTime：</p><pre><code class="Java">LocalDateTime.ofEpochSecond(1465817690, 0, ZoneOffset.UTC);</code></pre><p>现在让我们继续进行日期和时间格式化。</p><h3 id="7-日期和时间格式化"><a href="#7-日期和时间格式化" class="headerlink" title="7. 日期和时间格式化"></a>7. 日期和时间格式化</h3><p>Java 8提供了用于轻松格式化日期和时间的 API ：</p><pre><code class="Java">LocalDateTime localDateTime = LocalDateTime.of(2015, Month.JANUARY, 25, 6, 30);</code></pre><p>以下代码传递ISO日期格式以格式化本地日期。结果将是2015-01-25：</p><pre><code class="Java">String localDateString = localDateTime.format(DateTimeFormatter.ISO_DATE);</code></pre><p>该DateTimeFormatter提供多种标准格式选项。也可以提供自定义模式来格式化方法，如下所示，它将返回LocalDate为2015/01/25：</p><pre><code class="Java">localDateTime.format(DateTimeFormatter.ofPattern(&quot;yyyy/MM/dd&quot;));</code></pre><p>我们可以将格式样式传递为SHORT，LONG或MEDIUM作为格式化选项的一部分。下面的代码示例输出2015年1月25日06:30:00 me的输：</p><pre><code class="Java">localDateTime .format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM) .withLocale(Locale.UK);</code></pre><!-- </td></tr></table> -->]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ActiveMQ</title>
+      <link href="/2021/06/18/ActiveMQ/"/>
+      <url>/2021/06/18/ActiveMQ/</url>
+      
+        <content type="html"><![CDATA[<h2 id="ActiveMQ"><a href="#ActiveMQ" class="headerlink" title="ActiveMQ"></a><strong>ActiveMQ</strong></h2><h3 id="JMS规范"><a href="#JMS规范" class="headerlink" title="JMS规范"></a>JMS规范</h3><hr><h3 id="消息中间件的角色"><a href="#消息中间件的角色" class="headerlink" title="消息中间件的角色 "></a>消息中间件的角色 <br/></h3><ul><li>Queue：队列存储，常用于点对点模型，默认只能由唯一的消费者处理。一旦处理消息删除。</li><li>Topic：主题存储，用于订阅/发布消息模型，主题中的消息，会发送给所有消费者同时处理。只有在消息可以重复处理的业务场景可以使用。</li><li>ConnectionFactory：连接工厂，客户用来创建连接对象，例如，ActiveMQ提供的ActiveMQConnectionFactory。</li><li>Connection：JMS Connection封装了客户与JMS提供者之间的一个虚拟连接。</li><li>Destination：消息的目的地，目的地是客户用来指定它生产的消息的目标和它消费的消息的来源的对象。</li></ul><h3 id="JMS消息格式"><a href="#JMS消息格式" class="headerlink" title="JMS消息格式"></a>JMS消息格式</h3><h4 id="JMS消息由下面三部分组成："><a href="#JMS消息由下面三部分组成：" class="headerlink" title="JMS消息由下面三部分组成："></a>JMS消息由下面三部分组成：</h4><ul><li>消息头：每个字段都有对应的getter和setter方法</li><li>消息属性：如果需要除消息头字段以外的值，那么可以使用消息属性。</li><li>消息体：JMS定义消息类型有TextMessage、MapMessage、BytesMessage、StreamMessage和ObjectMessage</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ActiveMQ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Collection</title>
+      <link href="/2021/06/18/Collection/"/>
+      <url>/2021/06/18/Collection/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#list-set-map%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB">List 、Set、 Map有什么区别和联系</a></li><li><a href="#%E9%9B%86%E5%90%88%E4%B8%AD%E6%8E%A5%E5%8F%A3%E5%92%8C%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB">集合中接口和类的关系</a><ul><li><a href="#iterator%E6%89%80%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E9%83%BD%E5%AE%9E%E7%8E%B0%E4%BA%86iterator%E6%8E%A5%E5%8F%A3">Iterator：所有集合类都实现了Iterator接口</a></li></ul></li><li><a href="#%E5%B1%82%E6%AC%A1%E5%9B%BE">层次图</a></li><li><a href="#list">List</a></li><li><a href="#set">Set</a></li></ul><h3 id="List-、Set、-Map有什么区别和联系"><a href="#List-、Set、-Map有什么区别和联系" class="headerlink" title="List 、Set、 Map有什么区别和联系"></a>List 、Set、 Map有什么区别和联系</h3><ul><li>list 和set 有共同的父类 它们的用法也是一样的 唯一的不太就是set中不能有相同的元素 list中可以，list是有序集合</li><li>list和set的用途非常广泛 list可以完全代替数组来使用</li><li>map是独立的集合，它使用键值对的方式来储存数据，键不能有重复的</li></ul><h3 id="集合中接口和类的关系"><a href="#集合中接口和类的关系" class="headerlink" title="集合中接口和类的关系"></a>集合中接口和类的关系</h3><ul><li>Collection接口是集合类的根接口，Java中没有提供这个接口的直接实现类。但是却让它被继承，产生了两个接口，就是Set和List。</li><li>Map是另一个接口，与Collection是相互独立的</li></ul><h4 id="Iterator：所有集合类都实现了Iterator接口"><a href="#Iterator：所有集合类都实现了Iterator接口" class="headerlink" title="Iterator：所有集合类都实现了Iterator接口"></a>Iterator：所有集合类都实现了Iterator接口</h4><ol><li>用于遍历集合元素，主要有三个方法</li></ol><ul><li>hasNext()是否有下一个元素</li><li>next()返回下一个元素</li><li>remove()删除当前元素<h3 id="层次图"><a href="#层次图" class="headerlink" title="层次图"></a>层次图</h3><img src="https://img-blog.csdn.net/20170905084526091?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl2ZW9yX0RpZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></li></ul><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>1、 最常用集合：ArrayList  </br><br> 特点：ArrayList集合中元素存储的位置是连续的，所以查询起来会比较快捷，但是执行插入删除操作会比较麻烦一点，会引起其他元素位置的变化。<br> 注意：list中储存的是对象引用，而不是对象本身，如果对象变化，list中储存的也会变。</p><pre><code class="Java">   User user = new User(1, &quot;迪丽热巴&quot;, 18, new Date());   List&lt;User&gt; userList = new ArrayList&lt;User&gt;();   userList.add(user);   System.out.println(userList); // [User(id=1, username=迪丽热巴, ...)]   user.setUsername(&quot;德玛西亚&quot;);   System.out.println(userList); // [User(id=1, username=德玛西亚, ...)]</code></pre><p>2、与最常用集合相反的集合：LinkedList  </br><br>LinkedList与ArrayList是互补的，所以ArrayList的优点就是LinkedList的缺点，ArrayList的缺点就是LinkedList的优点。 </br><br>特点：LinkedList中元素位置是任意的，所以执行插入删除操作效率较高，查询效率较低。</p><p>LinkedList要头部插入才能体现它的效率</p><pre><code class="Java">    LinkedList&lt;Integer&gt; linkedList = new LinkedList&lt;&gt;();        long linkedStart = System.currentTimeMillis();        for (int i = 0; i &lt; 1000000; i++) &#123;            linkedList.addFirst(i);        &#125;</code></pre><p><img src="https://raw.githubusercontent.com/WhiteDragon96/ImgCloud/main/data/img20210525170510.png"></p><ul><li>在尾部插入数据，数据量较小时LinkedList比较快，因为ArrayList要频繁扩容，当数据量大时ArrayList比较快，因为ArrayList扩容是当前容量*1.5，大容量扩容一次就能提供很多空间，当ArrayList不需扩容时效率明显比LinkedList高，因为直接数组元素赋值不需new Node</li><li>在首部插入数据，LinkedList较快，因为LinkedList遍历插入位置花费时间很小，而ArrayList需要将原数组所有元素进行一次System.arraycopy</li><li>插入位置越往后，ArrayList效率越高，因为数组需要复制后移的数据少了，那么System.arraycopy就快了，因此在首部插入数据LinkedList效率比ArrayList高，尾部插入数据ArrayList效率比LinkedList高</li></ul><p>3、与一般集合都相反的集合：Vector </br><br>特点：多个线程同时访问不会发生不确定的结果，但是它的效率会比较低，如果要考虑线程安全的话可以用它。</p><h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>1、Set中最常用的集合：HashSet  </br><br>HashSet是使用Hash表实现的，集合里面的元素是无序得，可以有null值，但是不能有重复元素。</br><br>特点：因为相同的元素具有相同的hashCode，所以不能有重复元素</p><p>2、Set中第二常用的集合：TreeSet</p><p>TreeSet是用二叉树结构实现的集合</p><p>特点：集合中的元素是有顺序得，不允许放入null，同样不能放入重复元素。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 集合 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1.JavaScript 基础知识</title>
+      <link href="/2021/06/18/1.JavaScript%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <url>/2021/06/18/1.JavaScript%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#%E5%8F%98%E9%87%8F">变量</a></li><li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a></li><li><a href="#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F">严格模式</a></li><li><a href="#%E4%BA%A4%E4%BA%92alertprompt-%E5%92%8C-confirm">交互：alert、prompt 和 confirm</a></li><li><a href="#%E5%9F%BA%E7%A1%80%E8%BF%90%E7%AE%97%E7%AC%A6%E6%95%B0%E5%AD%A6">基础运算符，数学</a></li><li><a href="#%E5%80%BC%E7%9A%84%E6%AF%94%E8%BE%83">值的比较</a></li><li><a href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AFif-%E5%92%8C-">条件分支：if 和 ‘?’</a></li><li><a href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6">逻辑运算符</a></li><li><a href="#%E5%87%BD%E6%95%B0">函数</a><ul><li><a href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0">回调函数</a></li><li><a href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">匿名函数</a></li></ul></li><li><a href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0">箭头函数</a></li><li><a href="#javascript-%E7%89%B9%E6%80%A7">JavaScript 特性</a></li></ul><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>我们可以使用 var、let 或 const 声明变量来存储数据。</p><ul><li>let — 现代的变量声明方式。</li><li>var — 老旧的变量声明方式。一般情况下，我们不会再使用它。</li><li>const — 类似于 let，但是变量的值无法被修改。</li></ul><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>JavaScript 中有 8 种基本的数据类型（注：7 种原始类型和 1 种引用类型）。</p><ul><li><p>Number类型，代表整数和浮点数。</p></li><li><p>BigInt 类型，number” 类型无法表示大于 (253-1)，或小于 -(253-1) 的整数</p></li><li><p>String类型、Boolean类型</p></li><li><p>object 类型和 symbol 类型，object 则用于储存数据集合和更复杂的实体。</p></li><li><p>typeof 运算符，typeof 运算符返回参数的类型 </p><pre><code>typeof 0 // &quot;number&quot;typeof 10n // &quot;bigint&quot;  </code></pre><h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><p>为了完全启用现代 JavaScript 的所有特性，我们应该在脚本顶部写上 “use strict” 指令。</p><pre><code>  &#39;use strict&#39;;  ...</code></pre><h3 id="交互：alert、prompt-和-confirm"><a href="#交互：alert、prompt-和-confirm" class="headerlink" title="交互：alert、prompt 和 confirm"></a>交互：alert、prompt 和 confirm</h3></li><li><p>alert  弹出的这个带有信息的小窗口被称为 模态窗。“modal” 意味着用户不能与页面的其他部分（例如点击其他按钮等）进行交互，直到他们处理完窗口。在上面示例这种情况下 —— 直到用户点击“确定”按钮。</p></li><li><p>prompt，title： 显示给用户的文本，default：可选的第二个参数，指定 input 框的初始值。</p><pre><code>let age = prompt(&#39;How old are you?&#39;, 100);alert(`You are $&#123;age&#125; years old!`); // You are 100 years old!</code></pre></li><li><p>confirm， 函数显示一个带有 question 以及确定和取消两个按钮的模态窗口。点击确定返回 true，点击取消返回 false。</p><pre><code>  let isBoss = confirm(&quot;Are you the boss?&quot;);  alert( isBoss ); // 如果“确定”按钮被按下，则显示 true</code></pre><h3 id="基础运算符，数学"><a href="#基础运算符，数学" class="headerlink" title="基础运算符，数学"></a>基础运算符，数学</h3><p>支持以下数学运算：</p></li><li><p>加法 +,</p></li><li><p>减法 -,</p></li><li><p>乘法 *,</p></li><li><p>除法 /,</p></li><li><p>取余 %,</p></li><li><p>求幂 **.</p><pre><code>alert( 2 ** 2 ); // 4  (2 * 2，自乘 2 次)alert( 4 ** (1/2) ); // 2（1/2 次方与平方根相同)</code></pre><h3 id="值的比较"><a href="#值的比较" class="headerlink" title="值的比较"></a>值的比较</h3><ul><li><code>&gt;</code>  &lt; == !=<pre><code>== 存在一个问题，它不能区分出 0 和 falsealert( 0 == false ); // truealert( &#39;&#39; == false ); // true</code></pre>这是因为在比较不同类型的值时，处于相等判断符号 == 两侧的值会先被转化为数字。空字符串和 false 也是如此，转化后它们都为数字 0。</li><li>严格相等运算符 === 在进行比较时不会做任何的类型转换。<pre><code>    alert( 0 === false ); // false，因为被比较值的数据类型不同</code></pre></li></ul></li></ul><h3 id="条件分支：if-和-‘-’"><a href="#条件分支：if-和-‘-’" class="headerlink" title="条件分支：if 和 ‘?’"></a>条件分支：if 和 ‘?’</h3><ul><li>if(…) 语句计算括号里的条件表达式，如果计算结果是 true，就会执行对应的代码块。<pre><code>if (&quot;0&quot;) &#123; // 只要字符串不为空，都是true alert( &#39;Hello&#39; );&#125;   </code></pre></li><li> 条件运算符 ‘?’,三元运算符</li></ul><pre><code>  let result = condition ? value1 : value2;</code></pre><h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>JavaScript 中有三个逻辑运算符：||（或），&amp;&amp;（与），!（非）。</p><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><pre><code>  我们的新函数可以通过名称调用：showMessage()。  function showMessage() &#123;   alert( &#39;Hello everyone!&#39; );  &#125;  showMessage();  showMessage();</code></pre><ul><li>作为参数传递给函数的值，会被复制到函数的局部变量。</li><li>函数可以访问外部变量。但它只能从内到外起作用。函数外部的代码看不到函数内的局部变量。</li><li>函数可以返回值。如果没有返回值，则其返回的结果是 undefined。<h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4>我们写一个包含三个参数的函数 ask(question, yes, no)：</li></ul><p>question<br>关于问题的文本</p><p>yes<br>当回答为 “Yes” 时，要运行的脚本</p><p>no<br>当回答为 “No” 时，要运行的脚本</p><p>函数需要提出 question（问题），并根据用户的回答，调用 yes() 或 no()：</p><pre><code>  function ask(question, yes, no) &#123;if (confirm(question)) yes()else no();&#125;function showOk() &#123;alert( &quot;You agreed.&quot; );&#125;function showCancel() &#123;alert( &quot;You canceled the execution.&quot; );&#125;// 用法：函数 showOk 和 showCancel 被作为参数传入到 askask(&quot;Do you agree?&quot;, showOk, showCancel);</code></pre><h4 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h4><p>  这里直接在 ask(…) 调用内进行函数声明。这两个函数没有名字</p><pre><code>  ask(&quot;Do you agree?&quot;,function() &#123; alert(&quot;You agreed.&quot;); &#125;,function() &#123; alert(&quot;You canceled the execution.&quot;); &#125;);</code></pre><ul><li>函数声明：在主代码流中声明为单独的语句的函数。<pre><code>  // 函数声明  function sum(a, b) &#123;  return a + b;  &#125;</code></pre></li><li>函数表达式：在一个表达式中或另一个语法结构中创建的函数。下面这个函数是在赋值表达式 = 右侧创建的<pre><code>      // 函数表达式  let sum = function(a, b) &#123;  return a + b;  &#125;;</code></pre></li></ul><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><pre><code>  let sum = (a, b) =&gt; a + b;  /* 这个箭头函数是下面这个函数的更短的版本：  let sum = function(a, b) &#123;  return a + b;  &#125;; */  // 当只有一个参数时 可以去了括号  let alone = a =&gt; console.log(a)  alone(666);  // 没有参数时要保留括号  let empty = () =&gt; console.log(&quot;empty paramter&quot;)  empty();</code></pre><h3 id="JavaScript-特性"><a href="#JavaScript-特性" class="headerlink" title="JavaScript 特性"></a>JavaScript 特性</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IDEA快捷键</title>
+      <link href="/2021/06/18/IDEA%E5%AE%9E%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <url>/2021/06/18/IDEA%E5%AE%9E%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+      
+        <content type="html"><![CDATA[<p>IDEA快捷键（Windows）</p><table><thead><tr><th align="left">快捷键  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th align="left">介绍</th></tr></thead><tbody><tr><td align="left">Ctrl + H</td><td align="left">显示当前类的层次结构 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr><tr><td align="left">Ctrl + F4</td><td align="left">关闭当前编辑文件</td></tr><tr><td align="left">Ctrl + 前方向键</td><td align="left">等效于鼠标滚轮向前效果</td></tr><tr><td align="left">Alt + F3</td><td align="left">选中文本，逐个往下查找相同文本，并高亮显示</td></tr><tr><td align="left">Alt + 1</td><td align="left">选中Project</td></tr><tr><td align="left">Alt + 左右方向键</td><td align="left">切换打开的页面</td></tr><tr><td align="left">Shift + F2</td><td align="left">跳转到上一个高亮错误 或 警告位置</td></tr><tr><td align="left">Shift + F6</td><td align="left">对文件 / 文件夹 重命名</td></tr><tr><td align="left">Shift + End</td><td align="left">选中光标到当前行尾位置</td></tr><tr><td align="left">Shift + 左键单击</td><td align="left">在打开的文件名上按此快捷键，可以关闭当前打开文件</td></tr><tr><td align="left">Shift + 滚轮前后滚动</td><td align="left">当前文件的横向滚动轴滚动</td></tr><tr><td align="left">Ctrl + Alt + O</td><td align="left">优化导入的类，可以对当前文件和整个包目录使用 （必备）</td></tr><tr><td align="left">Ctrl + Shift + T</td><td align="left">对选中代码新建单元测试</td></tr><tr><td align="left">Ctrl + Shift + Z</td><td align="left">取消撤销 （必备）</td></tr><tr><td align="left">Ctrl + Shift + U</td><td align="left">对选中的代码进行大 / 小写轮流转换 （必备）</td></tr><tr><td align="left">Shift + 左键单击</td><td align="left">在打开的文件名上按此快捷键，可以关闭当前打开文件</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2.代码质量</title>
+      <link href="/2021/06/18/2.%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/"/>
+      <url>/2021/06/18/2.%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#%E5%9C%A8chrome%E4%B8%AD%E8%B0%83%E8%AF%95">在Chrome中调试</a><ul><li><a href="#%E8%B5%84%E6%BA%90sources%E9%9D%A2%E6%9D%BF">“资源（Sources）”面板</a></li></ul></li><li><a href="#%E6%8E%A7%E5%88%B6%E5%8F%B0console">控制台（Console）</a></li><li><a href="#%E6%96%AD%E7%82%B9breakpoints">断点（Breakpoints）</a><ul><li><a href="#debugger-%E5%91%BD%E4%BB%A4">Debugger 命令</a></li><li><a href="#%E6%9A%82%E5%81%9C%E5%B9%B6%E6%9F%A5%E7%9C%8B">暂停并查看</a></li><li><a href="#%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95">日志记录</a></li></ul></li><li><a href="#%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC">代码风格</a><ul><li><a href="#%E5%87%BD%E6%95%B0%E4%BD%8D%E7%BD%AE">函数位置</a></li></ul></li><li><a href="#%E4%BD%BF%E7%94%A8-mocha-%E8%BF%9B%E8%A1%8C%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95">使用 Mocha 进行自动化测试</a></li></ul><h3 id="在Chrome中调试"><a href="#在Chrome中调试" class="headerlink" title="在Chrome中调试"></a>在Chrome中调试</h3><h4 id="“资源（Sources）”面板"><a href="#“资源（Sources）”面板" class="headerlink" title="“资源（Sources）”面板"></a>“资源（Sources）”面板</h4><ul><li>使用快捷键 F12（Mac：Cmd+Opt+I）打开开发者工具。</li><li>选择 Sources（资源） 面板。<br><img src="https://raw.githubusercontent.com/WhiteDragon96/ImgCloud/main/data/imgWhite_2021-04-08_20-55-01.png"></li></ul><p>资源（Sources）面板包含三个部分：</p><ol><li>文件导航（File Navigator） 区域列出了 HTML、JavaScript、CSS 和包括图片在内的其他依附于此页面的文件。Chrome 扩展程序也会显示在这。</li><li>代码编辑（Code Editor） 区域展示源码。</li><li>JavaScript 调试（JavaScript Debugging） 区域是用于调试的</li></ol><h3 id="控制台（Console）"><a href="#控制台（Console）" class="headerlink" title="控制台（Console）"></a>控制台（Console）</h3><p>我们可以输入一些命令然后按下 Enter 来执行。语句执行完毕之后，其执行结果会显示在下面。</p><p> 例如，1+2 将会返回 3，hello(“debugger”) 函数什么也不返回，因此结果是 undefined：<br> <img src="https://raw.githubusercontent.com/WhiteDragon96/ImgCloud/main/data/img20210408210225.png"></p><h3 id="断点（Breakpoints）"><a href="#断点（Breakpoints）" class="headerlink" title="断点（Breakpoints）"></a>断点（Breakpoints）</h3><p><img src="https://raw.githubusercontent.com/WhiteDragon96/ImgCloud/main/data/img20210409091818.png"></p><p>断点 是调试器会自动暂停 JavaScript 执行的地方。</p><h4 id="Debugger-命令"><a href="#Debugger-命令" class="headerlink" title="Debugger 命令"></a>Debugger 命令</h4><p>我们也可以使用 debugger 命令来暂停代码，像这样：</p><pre><code class="javaScript">  function hello(name) &#123;      let phrase = `Hello, $&#123;name&#125;!`;      debugger;  // &lt;-- 调试器会在这停止      say(phrase);  &#125;</code></pre><h4 id="暂停并查看"><a href="#暂停并查看" class="headerlink" title="暂停并查看"></a>暂停并查看</h4><p><img src="https://raw.githubusercontent.com/WhiteDragon96/ImgCloud/main/data/img20210409092851.png"></p><ol><li>察看（Watch） —— 显示任意表达式的当前值。 </br><br> 你可以点击加号 + 然后输入一个表达式。调试器将随时显示它的值，并在执行过程中自动重新计算该表达式。</li><li>调用栈（Call Stack） —— 显示嵌套的调用链。 </br><br> 此时，调试器正在 hello() 的调用链中，被 index.html 中的一个脚本调用（这里没有函数，因此显示 “anonymous”）</li><li>作用域（Scope） —— 显示当前的变量。</br><br> local 显示当前函数中的变量，你还可以在源代码中看到它们的值高亮显示了出来。</br><br> Global 显示全局变量（不在任何函数中）。<h4 id="日志记录"><a href="#日志记录" class="headerlink" title="日志记录"></a>日志记录</h4><pre><code class="JavaScript"> // 打开控制台来查看for (let i = 0; i &lt; 5; i++) &#123; console.log(&quot;value&quot;, i);&#125;</code></pre></li></ol><h3 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h3><p><img src="https://raw.githubusercontent.com/WhiteDragon96/ImgCloud/main/data/img20210409181905.png"></p><h4 id="函数位置"><a href="#函数位置" class="headerlink" title="函数位置"></a>函数位置</h4><ol><li>在调用这些函数的代码的 上方 声明这些函数：<br>```JavaScript<br>   // 函数声明<br>function createElement() {<br>…<br>}</li></ol><p>function setHandler(elem) {<br>  …<br>}</p><p>function walkAround() {<br>  …<br>}</p><p>// 调用函数的代码<br>let elem = createElement();<br>setHandler(elem);<br>walkAround();</p><pre><code>2. 先写调用代码，再写函数 ```JavaScript      // 调用函数的代码  let elem = createElement();  setHandler(elem);  walkAround();  // --- 辅助函数 ---  function createElement() &#123;    ...  &#125;  function setHandler(elem) &#123;    ...  &#125;  function walkAround() &#123;    ...  &#125;</code></pre><h3 id="使用-Mocha-进行自动化测试"><a href="#使用-Mocha-进行自动化测试" class="headerlink" title="使用 Mocha 进行自动化测试"></a><a href="https://zh.javascript.info/testing-mocha">使用 Mocha 进行自动化测试</a></h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Stream教程</title>
+      <link href="/2021/06/18/Stream%E6%95%99%E7%A8%8B/"/>
+      <url>/2021/06/18/Stream%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><ul><li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFstream">什么是Stream</a></li><li><a href="#%E6%B5%81%E7%9A%84%E6%9E%84%E6%88%90">流的构成</a></li><li><a href="#%E6%B5%81%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B%E5%88%86%E4%B8%BA%E4%B8%A4%E7%A7%8D">流的操作类型分为两种：</a></li><li><a href="#%E6%B5%81%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E8%BD%AC%E6%8D%A2">流的构造与转换</a><ul><li><a href="#%E6%9E%84%E9%80%A0%E6%B5%81%E7%9A%84%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95">构造流的几种常见方法</a></li><li><a href="#%E6%B5%81%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%85%B6%E5%AE%83%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">流转换为其它数据结构</a></li></ul></li><li><a href="#%E6%B5%81%E7%9A%84%E6%93%8D%E4%BD%9C">流的操作</a></li></ul><h3 id="什么是Stream"><a href="#什么是Stream" class="headerlink" title="什么是Stream"></a>什么是Stream</h3><p>   &emsp;&emsp; stream是对集合(Collection)对象功能的增强，它提供串行和并行两种模式进行汇聚操作，并发模式能够充分利用多核处理器的优势，使用 fork/join 并行方式来拆分任务和加速处理过程。</p><p>   &emsp;&emsp; 原始版本的 Iterator，用户只能显式地一个一个遍历元素并对其执行某些操作；高级版本的 Stream，用户只要给出需要对其包含的元素执行什么操作，比如 “过滤掉长度大于 10 的字符串”、“获取每个字符串的首字母”等，Stream 会隐式地在内部进行遍历，做出相应的数据转换。</p><h3 id="流的构成"><a href="#流的构成" class="headerlink" title="流的构成"></a>流的构成</h3><p>获取一个流，通常有三个步骤：</p><p>&emsp;&emsp;获取一个数据源（source）→ 数据转换→执行操作获取想要的结果，每次转换原有 Stream 对象不改变，返回一个新的 Stream 对象（可以有多次转换），这就允许对其操作可以像链条一样排列，变成一个管道</p><p>有多种方式生成 Stream Source：</p><ul><li>从 Collection 和数组<ul><li>Collection.stream()</li><li>Collection.parallelStream()</li><li>Arrays.stream(T array) or Stream.of()</li></ul></li><li>从BufferedReader<ul><li>java.io.BufferedReader.lines()</li></ul></li><li>静态工厂<ul><li>java.util.stream.IntStream.range()</li><li>java.nio.file.Files.walk()</li></ul></li></ul><h3 id="流的操作类型分为两种："><a href="#流的操作类型分为两种：" class="headerlink" title="流的操作类型分为两种："></a>流的操作类型分为两种：</h3><ul><li>Intermediate: 一个流可以后面跟随零个或多个 intermediate 操作。其目的主要是打开流，做出某种程度的数据映射/过滤，然后返回一个新的流，交给下一个操作使用。</li></ul><ul><li>Terminal: 一个流只能有一个 terminal 操作，当这个操作执行后，流就被使用“光”了，无法再被操作。所以这必定是流的最后一个操作。Terminal 操作的执行，才会真正开始流的遍历，并且会生成一个结果，或者一个 side effect。</li></ul><h3 id="流的构造与转换"><a href="#流的构造与转换" class="headerlink" title="流的构造与转换"></a>流的构造与转换</h3><h4 id="构造流的几种常见方法"><a href="#构造流的几种常见方法" class="headerlink" title="构造流的几种常见方法"></a>构造流的几种常见方法</h4><pre><code class="Java">  // 1. Individual values  Stream stream = Stream.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);  // 2. Arrays  String [] strArray = new String[] &#123;&quot;a&quot;, &quot;b&quot;, &quot;c&quot;&#125;;  stream = Stream.of(strArray);  stream = Arrays.stream(strArray);  // 3. Collections  List&lt;String&gt; list = Arrays.asList(strArray);  stream = list.stream();</code></pre><h4 id="流转换为其它数据结构"><a href="#流转换为其它数据结构" class="headerlink" title="流转换为其它数据结构"></a>流转换为其它数据结构</h4><p>一个 Stream 只可以使用一次，下面面的代码为了简洁而重复使用了数次。</p><pre><code class="Java">  // 1. Array  String[] strArray1 = stream.toArray(String[]::new);  // 2. Collection  List&lt;String&gt; list1 = stream.collect(Collectors.toList());  List&lt;String&gt; list2 = stream.collect(Collectors.toCollection(ArrayList::new));  Set set1 = stream.collect(Collectors.toSet());  Stack stack1 = stream.collect(Collectors.toCollection(Stack::new));  // 3. String  String str = stream.collect(Collectors.joining()).toString();</code></pre><h3 id="流的操作"><a href="#流的操作" class="headerlink" title="流的操作"></a>流的操作</h3><ul><li><p>Intermediate：<br>map (mapToInt, flatMap 等)、 filter、 distinct、 sorted、 peek、 limit、 skip、 parallel、 sequential、 unordered</p><pre><code class="Java">  // map/flatMap   // Stream中map元素类型转化方法  List&lt;User&gt; collect = userList.stream().map(user -&gt; fixUser(user)).collect(Collectors.toList());  // filter 对原始 Stream 进行某项测试，通过测试的元素被留下来生成一个新 Stream。  // 过滤掉不满足条件的对象  userList.stream().filter(user -&gt; user.getAge()&lt;20).forEach(user -&gt; System.out.println(&quot;filter&quot; + user));  //peek 对每个元素执行操作并返回一个新的 Stream  userList.stream().peek(System.out::println)  //findFirst 这是一个 terminal 兼 short-circuiting 操作，它总是返回 Stream 的第一个元素，或者空。  Optional&lt;User&gt; first = userList.stream().findFirst();  User user = first.get();  // limit 返回 Stream 的前面 n 个元素；skip 则是扔掉前 n 个元素  userList.stream().limit(1).forEach(user -&gt; System.out.println(&quot;limit: &quot; + user));  userList.stream().skip(2).forEach(user -&gt; System.out.println(&quot;skip: &quot; + user));  //sort 排序 根据某个值排序取前几个  userList.stream().sorted(Comparator.comparing(User::getAge)).limit(2).forEach(user -&gt; System.out.println(&quot;sorted: &quot; + user));  // min/max/distinct  min 和 max 的功能也可以通过对 Stream 元素先排序，再 findFirst 来实现，但前者的&lt;性能会更好，为 O(n)，而 sorted 的成本是 O(n log n)。同时它们作为特殊的 reduce 方法被独立出来也是因为求最大最小值是很常见的操作。  BufferedReader bufferedReader = new BufferedReader(new FileReader(&quot;E:\\文档\\笔记\\node的安装及使用.md&quot;));  int asInt = bufferedReader.lines().mapToInt(String::length).max().getAsInt();  // 找出全文的单词，转大写，并排序      List&lt;String&gt; strings = br.lines().flatMap(line -&gt; Stream.of(line.split(&quot; &quot;)))              .filter(word -&gt; word.length() &gt; 0).map(String::toUpperCase).distinct().sorted()              .collect(Collectors.toList());</code></pre></li><li><p>Terminal：<br>forEach、 forEachOrdered、 toArray、 reduce、 collect、 min、 max、 count、 anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 iterator</p><pre><code class="Java">  //forEach  forEach 方法接收一个 Lambda 表达式，然后在 Stream 的每一个元素上执行该表达式。  userList.stream().filter(user -&gt; user.getAge()&gt;18).forEach(System.out::println);</code></pre></li><li><p>Short-circuiting：<br> anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 limit</p><p>  Stream 有三个 match 方法，从语义上说：</p><ul><li>allMatch：Stream 中全部元素符合传入的 predicate，返回 true</li><li>anyMatch：Stream 中只要有一个元素符合传入的 predicate，返回 true</li><li>noneMatch：Stream 中没有一个元素符合传入的 predicate，返回 true<br>```Java<br>// 是否有所有人都大于18岁<br>boolean b = userList.stream().allMatch(uesr -&gt; uesr.getAge() &gt; 18);</li></ul><p>```</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows软件</title>
+      <link href="/2021/06/18/Windows%E8%BD%AF%E4%BB%B6/"/>
+      <url>/2021/06/18/Windows%E8%BD%AF%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h3 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h3><table><thead><tr><th>软件</th><th align="center">描述</th></tr></thead><tbody><tr><td><a href="https://dl.softmgr.qq.com/original/Office/TrafficMonitor_V1.77_.for.XP.7z">Traffic monitor</a></td><td align="center">显示网速、CPU使用情况</td></tr><tr><td><a href="https://www.snipaste.com/">Snipaste</a></td><td align="center">截图软件</td></tr><tr><td><a href="https://pc.qq.com/detail/16/detail_416.html">IDM</a></td><td align="center">下载器</td></tr><tr><td><a href="https://u.tools/">uTools</a></td><td align="center">搜索助手，携带很多插件功能</td></tr><tr><td><a href="https://www.aliyundrive.com/drive/">Listary</a></td><td align="center">启动器+文件管理器快速切换</td></tr><tr><td><a href="https://github.com/TranslucentTB/TranslucentTB">TranslucentTB</a></td><td align="center">状态栏透明，有汉化版</td></tr><tr><td><br/></td><td align="center"></td></tr></tbody></table><h3 id="下载源"><a href="#下载源" class="headerlink" title="下载源"></a>下载源</h3><ul><li><a href="https://pc.qq.com/detail">腾讯下载中心</a>,可以直达官网</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git常用命令</title>
+      <link href="/2021/06/18/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2021/06/18/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s1.ax1x.com/2020/06/24/NdCtOO.jpg" alt="NdCtOO.jpg"></p><ul><li><a href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C">分支操作</a></li><li><a href="#%E6%9A%82%E5%AD%98%E6%93%8D%E4%BD%9C">暂存操作</a></li><li><a href="#%E5%9B%9E%E9%80%80%E6%93%8D%E4%BD%9C">回退操作</a></li><li><a href="#%E6%A0%87%E7%AD%BE%E6%93%8D%E4%BD%9C">标签操作</a></li><li><a href="#%E5%85%B6%E5%AE%83%E6%93%8D%E4%BD%9C">其它操作</a><ul><li><a href="#%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C">常规操作</a></li><li><a href="#git%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E4%BB%93%E5%BA%93">git创建项目仓库</a></li><li><a href="#%E5%BF%BD%E7%95%A5%E5%B7%B2%E5%8A%A0%E5%85%A5%E5%88%B0%E7%89%88%E6%9C%AC%E5%BA%93%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6">忽略已加入到版本库中的文件</a></li><li><a href="#%E5%8F%96%E6%B6%88%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6">取消忽略文件</a></li><li><a href="#%E6%8B%89%E5%8F%96%E4%B8%8A%E4%BC%A0%E5%85%8D%E5%AF%86%E7%A0%81">拉取、上传免密码</a></li></ul></li></ul><h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><ol><li>git branch 创建分支</li><li>git checkout -b 创建并切换到新建的分支上</li><li>git checkout 切换分支</li><li>git branch 查看分支列表</li><li>git branch -v 查看所有分支的最后一次操作</li><li>git branch -vv 查看当前分支</li><li>git brabch -b 分支名 origin/分支名 创建远程分支到本地</li><li>git branch –merged 查看别的分支和当前分支合并过的分支</li><li>git branch –no-merged 查看未与当前分支合并的分支</li><li>git branch -d 分支名 删除本地分支</li><li>git branch -D 分支名 强行删除分支</li><li>git branch origin :分支名 删除远处仓库分支</li><li>git merge 分支名 合并分支到当前分支上</li></ol><h2 id="暂存操作"><a href="#暂存操作" class="headerlink" title="暂存操作"></a>暂存操作</h2><ol><li>git stash 暂存当前修改</li><li>git stash apply 恢复最近的一次暂存</li><li>git stash pop 恢复暂存并删除暂存记录</li><li>git stash list 查看暂存列表</li><li>git stash drop 暂存名(例：stash@{0}) 移除某次暂存</li><li>git stash clear 清除暂存</li></ol><h2 id="回退操作"><a href="#回退操作" class="headerlink" title="回退操作"></a>回退操作</h2><ol><li>git reset –hard HEAD^ 回退到上一个版本</li><li>git reset –hard ahdhs1(commit_id) 回退到某个版本</li><li>git checkout – file撤销修改的文件(如果文件加入到了暂存区，则回退到暂存区的，如果文件加入到了版本库，则还原至加入版本库之后的状态)</li><li>git reset HEAD file 撤回暂存区的文件修改到工作区</li></ol><h2 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h2><ol><li>git tag 标签名 添加标签(默认对当前版本)</li><li>git tag 标签名 commit_id 对某一提交记录打标签</li><li>git tag -a 标签名 -m ‘描述’ 创建新标签并增加备注</li><li>git tag 列出所有标签列表</li><li>git show 标签名 查看标签信息</li><li>git tag -d 标签名 删除本地标签</li><li>git push origin 标签名 推送标签到远程仓库</li><li>git push origin –tags 推送所有标签到远程仓库</li><li>git push origin :refs/tags/标签名 从远程仓库中删除标签</li></ol><h2 id="其它操作"><a href="#其它操作" class="headerlink" title="其它操作"></a>其它操作</h2><h3 id="常规操作"><a href="#常规操作" class="headerlink" title="常规操作"></a>常规操作</h3><ol><li>git push origin test 推送本地分支到远程仓库</li><li>git rm -r –cached 文件/文件夹名字 取消文件被版本控制</li><li>git reflog 获取执行过的命令</li><li>git log –graph 查看分支合并图</li><li>git merge –no-ff -m ‘合并描述’ 分支名 不使用Fast forward方式合并，采用这种方式合并可以看到合并记录</li><li>git check-ignore -v 文件名 查看忽略规则</li><li>git add -f 文件名 强制将文件提交</li></ol><h3 id="git创建项目仓库"><a href="#git创建项目仓库" class="headerlink" title="git创建项目仓库"></a>git创建项目仓库</h3><ol><li>git init 初始化 2、git remote add origin url 关联远程仓库 3、git pull 4、git fetch 获取远程仓库中所有的分支到本地</li></ol><h3 id="忽略已加入到版本库中的文件"><a href="#忽略已加入到版本库中的文件" class="headerlink" title="忽略已加入到版本库中的文件"></a>忽略已加入到版本库中的文件</h3><ol><li>git update-index –assume-unchanged file 忽略单个文件 2、git rm -r –cached 文件/文件夹名字 (. 忽略全部文件)</li></ol><h3 id="取消忽略文件"><a href="#取消忽略文件" class="headerlink" title="取消忽略文件"></a>取消忽略文件</h3><p>git update-index –no-assume-unchanged file</p><h3 id="拉取、上传免密码"><a href="#拉取、上传免密码" class="headerlink" title="拉取、上传免密码"></a>拉取、上传免密码</h3><p>git config –global credential.helper store</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2021/06/18/hello-world/"/>
+      <url>/2021/06/18/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>3.Object对象基础知识</title>
+      <link href="/2021/06/18/3.Object%EF%BC%88%E5%AF%B9%E8%B1%A1%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <url>/2021/06/18/3.Object%EF%BC%88%E5%AF%B9%E8%B1%A1%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#object%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">Object（对象）：基础知识</a><ul><li><a href="#%E5%AF%B9%E8%B1%A1">对象</a><ul><li><a href="#%E6%96%B9%E6%8B%AC%E5%8F%B7">方括号</a></li><li><a href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7">计算属性</a></li></ul></li><li><a href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E7%AE%80%E5%86%99">属性值简写</a></li><li><a href="#%E5%B1%9E%E6%80%A7%E5%AD%98%E5%9C%A8%E6%80%A7%E6%B5%8B%E8%AF%95in-%E6%93%8D%E4%BD%9C%E7%AC%A6">属性存在性测试，“in” 操作符</a></li><li><a href="#forin-%E5%BE%AA%E7%8E%AF">“for…in” 循环</a></li><li><a href="#%E5%83%8F%E5%AF%B9%E8%B1%A1%E4%B8%80%E6%A0%B7%E6%8E%92%E5%BA%8F">像对象一样排序</a></li><li><a href="#%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8%E5%92%8C%E5%A4%8D%E5%88%B6">对象引用和复制</a></li><li><a href="#%E5%8F%AF%E9%80%89%E9%93%BE--">可选链 “?.” </a><ul><li><a href="#%E7%9F%AD%E8%B7%AF%E6%95%88%E5%BA%94">短路效应</a></li><li><a href="#%E5%85%B6%E5%AE%83%E5%8F%98%E4%BD%93">其它变体：?.()，?.[]</a></li></ul></li><li><a href="#symbol-%E7%B1%BB%E5%9E%8B">Symbol 类型</a></li><li><a href="#%E5%AF%B9%E8%B1%A1--%E5%8E%9F%E5%A7%8B%E5%80%BC%E8%BD%AC%E6%8D%A2">对象 — 原始值转换</a></li></ul></li></ul><h2 id="Object（对象）：基础知识"><a href="#Object（对象）：基础知识" class="headerlink" title="Object（对象）：基础知识"></a>Object（对象）：基础知识</h2><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>我们可以通过使用带有可选 属性列表 的花括号 {…} 来创建对象。一个属性就是一个键值对（“key: value”），其中键（key）是一个字符串（也叫做属性名），值（value）可以是任何值。</p><pre><code class="JavaScript">      let user = new Object(); // “构造函数” 的语法      let user = &#123;     // 一个对象          name: &quot;John&quot;,  // 键 &quot;name&quot;，值 &quot;John&quot;          age: 30,        // 键 &quot;age&quot;，值 30          &quot;like bird&quot; : true,      &#125;;</code></pre><p>属性有键（或者也可以叫做“名字”或“标识符”），位于冒号 “:” 的前面，值在冒号的右边。</p><p>在 user 对象中，有两个属性：</p><ol><li>第一个的键是 “name”，值是 “John”。</li><li>第二个的键是 “age”，值是 30。</li></ol><h4 id="方括号"><a href="#方括号" class="headerlink" title="方括号"></a>方括号</h4><p>对于多词属性，点操作就不能用了：</p><pre><code class="JavaScript">  // 这将提示有语法错误  user.likes birds = true</code></pre><pre><code class="JavaScript">  有另一种方法，就是使用方括号，可用于任何字符串：  let user = &#123;&#125;;  // 设置  user[&quot;likes birds&quot;] = true;  // 读取  alert(user[&quot;likes birds&quot;]); // true  // 删除  delete user[&quot;likes birds&quot;];</code></pre><p>在这里，变量 key 可以是程序运行时计算得到的，也可以是根据用户的输入得到的。然后我们可以用它来访问属性。这给了我们很大的灵活性。</p><pre><code class="JavaScript">  let user = &#123;  name: &quot;John&quot;,  age: 30  &#125;;  let key = prompt(&quot;What do you want to know about the user?&quot;, &quot;name&quot;);  // 访问变量  alert( user[key] ); // John（如果输入 &quot;name&quot;）  //点符号不能以类似的方式使用：  alert( user.key ) // undefined</code></pre><h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h4><p>当创建一个对象时，我们可以在对象字面量中使用方括号。这叫做 计算属性。</p><pre><code class="JavaScript">  let fruit = prompt(&quot;Which fruit to buy?&quot;, &quot;apple&quot;);  let bag = &#123;  [fruit]: 5, // 属性名是从 fruit 变量中得到的  &#125;;  alert( bag.apple ); // 5 如果 fruit=&quot;apple&quot;</code></pre><p>方括号比点符号更强大。它允许任何属性名和变量，但写起来也更加麻烦。</p><p>所以，大部分时间里，当属性名是已知且简单的时候，就使用点符号。如果我们需要一些更复杂的内容，那么就用方括号。</p><h3 id="属性值简写"><a href="#属性值简写" class="headerlink" title="属性值简写"></a>属性值简写</h3><p>在实际开发中，我们通常用已存在的变量当做属性名。</p><pre><code class="JavaScript">  &lt;script&gt;      function makeUser(name,age)&#123;          return&#123;              name: name,              age: age,              // 其他属性          &#125;      &#125;      let user = makeUser(&quot;John&quot;,18)      console.log(user) //&#123;name: &quot;John&quot;, age: 18&#125;  &lt;/script&gt;</code></pre><p>在上面的例子中，属性名跟变量名一样。这种通过变量生成属性的应用场景很常见，在这有一种特殊的 属性值缩写 方法，使属性名变得更短。</p><p>可以用 name 来代替 name:name 像下面那样：</p><pre><code class="JavaScript">  function makeUser(name, age) &#123;  return &#123;      name, // 与 name: name 相同      age,  // 与 age: age 相同      // ...  &#125;;  &#125;</code></pre><h3 id="属性存在性测试，“in”-操作符"><a href="#属性存在性测试，“in”-操作符" class="headerlink" title="属性存在性测试，“in” 操作符"></a>属性存在性测试，“in” 操作符</h3><p>相比于其他语言，JavaScript 的对象有一个需要注意的特性：能够被访问任何属性。即使属性不存在也不会报错！</p><p>读取不存在的属性只会得到 undefined。所以我们可以很容易地判断一个属性是否存在：</p><pre><code class="JavaScript">  let user = &#123;&#125;;  console.log(user.age === undefined) //true</code></pre><p>这里还有一个特别的，检查属性是否存在的操作符 “in”。</p><p>语法是：</p><pre><code class="JavaScript">  &quot;key&quot; in object  let user = &#123;          name: &quot;White&quot;,          age: 8      &#125;;      console.log(&quot;name&quot; in user) //true      console.log(&quot;white&quot; in user) //fasle</code></pre><h3 id="“for…in”-循环"><a href="#“for…in”-循环" class="headerlink" title="“for…in” 循环"></a>“for…in” 循环</h3><p>为了遍历一个对象的所有键（key），可以使用一个特殊形式的循环：for..in。这跟我们在前面学到的 for(;;) 循环是完全不一样的东西。</p><pre><code class="JavaScript">  &quot;key&quot; in object  let user = &#123;          name: &quot;White&quot;,          age: 8      &#125;;      for(key in user)&#123;          //key          console.log(key) // name,age          // value          console.log(user[key])// White,8      &#125;</code></pre><h3 id="像对象一样排序"><a href="#像对象一样排序" class="headerlink" title="像对象一样排序"></a>像对象一样排序</h3><p>整数属性会被进行排序，其他属性则按照创建的顺序显示</p><h3 id="对象引用和复制"><a href="#对象引用和复制" class="headerlink" title="对象引用和复制"></a>对象引用和复制</h3><h3 id="可选链-“-”"><a href="#可选链-“-”" class="headerlink" title="可选链 “?.” "></a><a href="https://zh.javascript.info/optional-chaining">可选链 “?.” </a></h3><p>我们大多数用户的地址都存储在 user.address 中，街道地址存储在 user.address.street 中，但有些用户没有提供这些信息。</p><pre><code class="JavaScript">let user = &#123;&#125;; // 一个没有 &quot;address&quot; 属性的 user 对象alert(user.address.street); // Error!</code></pre><p>如果可选链 ?. 前面的部分是 undefined 或者 null，它会停止运算并返回该部分。</br><br>例如：value?.prop：</br></p><ul><li><p>如果value存在，则结果与value.prop相同</p></li><li><p>否则 （当value为undefined/null时)则返回undefined</p><pre><code class="JavaScript">  let user = &#123;&#125;;// user 没有 address 属性  alert(user?.address?.street)  let user = null;  alert( user?.address ); // undefined  alert( user?.address.street ); // undefined</code></pre><h4 id="短路效应"><a href="#短路效应" class="headerlink" title="短路效应"></a>短路效应</h4></li></ul><p>正如前面所说的，如果 ?. 左边部分不存在，就会立即停止运算（“短路效应”）。</p><p>所以，如果后面有任何函数调用或者副作用，它们均不会执行。</p><h4 id="其它变体：-，"><a href="#其它变体：-，" class="headerlink" title="其它变体：?.()，?.[]"></a>其它变体：?.()，?.[]</h4><ul><li><p>将 ?.() 用于调用一个可能不存在的函数。</p><pre><code class="JavaStript">  let userAdmin = &#123;  admin() &#123;    alert(&quot;I am admin&quot;);  &#125;&#125;;let userGuest = &#123;&#125;;userAdmin.admin?.(); // I am adminuserGuest.admin?.(); // 啥都没有（没有这样的方法）</code></pre><p>在这两行代码中，我们首先使用点符号（userAdmin.admin）来获取 admin 属性，因为用户对象一定存在，因此可以安全地读取它。</p></li></ul><p>然后 ?.() 会检查它左边的部分：如果 admin 函数存在，那么就调用运行它（对于 userAdmin）。否则（对于 userGuest）运算停止，没有错误。</p><p>此外，我们还可以将 ?. 跟 delete 一起使用：</p><pre><code>  delete user?.name; // 如果 user 存在，则删除 user.name</code></pre><h3 id="Symbol-类型"><a href="#Symbol-类型" class="headerlink" title="Symbol 类型"></a><a href="https://zh.javascript.info/symbol">Symbol 类型</a></h3><h3 id="对象-—-原始值转换"><a href="#对象-—-原始值转换" class="headerlink" title="对象 — 原始值转换"></a>对象 — 原始值转换</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hellow world</title>
+      <link href="/2021/06/17/Hellow-world/"/>
+      <url>/2021/06/17/Hellow-world/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>页面标题</title>
+      <link href="/2021/06/17/matter/"/>
+      <url>/2021/06/17/matter/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
